@@ -1,0 +1,33 @@
+<div>
+  <button class="btn btn-primary" routerLink="/update">User Add</button>&nbsp;&nbsp;
+  
+  <button class="btn btn-success" type="submit" [routerLink]="['/productDetails']">View Product</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-secondary" type="submit" [routerLink]="['/login']">Log out</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Email_Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of AllEmployees; let i = index">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.emailId}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        
+        <td>
+          
+            <button class="btn btn-primary" [routerLink]="['/edit', employee.id]">Update</button>
+            <button class="btn btn-danger" (click)="removeEmployee(employee, i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,29 @@
+<div>
+  &nbsp;&nbsp;<button class="btn btn-success"  type="submit" routerLink="/add-product">ADD PRODUCT</button>&nbsp;&nbsp;
+  &nbsp;&nbsp;<button class="btn btn-secondary"  type="submit" routerLink="/details">BACK</button>&nbsp;&nbsp;
+  <button class="btn btn-danger" [routerLink]="['/login']">LOGOUT</button>  
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">PRODUCT NAME</th>
+        <th scope="col">PRODUCT PRICE</th>
+        <th scope="col">CREATE BY(ID) </th>
+        <th scope="col">UPDATE PRODUCT</th>
+        <th scope="col">DELETE PRODUCT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prodlist of productDetails; let i = index">
+        <th scope="row">{{prodlist.prodId}}</th>
+        <td>{{prodlist.prodName}}</td>
+        <td>{{prodlist.pordPrice}}</td>
+        <td>{{prodlist.adminId}}</td>
+        <td>
+          
+          <button class="btn btn-primary" [routerLink]="['/update-product', prodlist.prodId]">Update</button>    </td>
+        <td>   <button class="btn btn-danger" (click)="removeEmployee(prodlist, i)">Delete</button>    </td>
+      </tr>
+    </tbody>
+  </table>

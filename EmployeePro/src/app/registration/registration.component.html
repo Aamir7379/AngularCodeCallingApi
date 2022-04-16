@@ -1,0 +1,37 @@
+<p>registration works!</p>
+<div class="background">
+    <form [formGroup]="emplyeeForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <h1>Employee Registration Form</h1>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="firstName"
+                        [ngClass]="{ 'is-invalid' : submitted && signUp.firstName.errors }">
+                    <div class="invalid-feedback" *ngIf="submitted && signUp.firstName.errors?.required">
+                        First Name is  required.
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Last Name</label>
+                    <input type="text"class="form-control" placeholder="LastName" formControlName="lastName"
+                        [ngClass]="{ 'is-invalid' : submitted && signUp.lastName.errors }">
+                    <div class="invalid-feedback" *ngIf="submitted && signUp.lastName.errors?.required">
+                        Last Name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email ID</label>
+                    <input type="text" class="form-control" placeholder="Email" formControlName="emailId"
+                        [ngClass]="{ 'is-invalid' : submitted && signUp.emailId.errors }">
+                    <div class="invalid-feedback" *ngIf="submitted && signUp.emailId.errors?.required">
+                        EmailId is required.
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">User Register</button>
+        </div>
+    </form>
+</div>

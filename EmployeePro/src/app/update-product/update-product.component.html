@@ -1,0 +1,23 @@
+<p>update-product works!</p>
+  <p>EmployeeID: {{employeeId}}</p>
+
+
+
+  <div class="container">
+    <form [formGroup]="editProduct" (ngSubmit)="onSubmit()">
+            <h1>Edit Product Form</h1>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">prodName</label>
+              <input type="text" class="form-control" placeholder="prodName" formControlName="prodName">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">pordPrice</label>
+            <input type="text" class="form-control" placeholder="pordPrice" formControlName="pordPrice">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">adminId</label>
+          <input type="text" class="form-control" placeholder="adminId" formControlName="adminId">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
